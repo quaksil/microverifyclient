@@ -34,65 +34,67 @@ public class WSClientServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		request.getRequestDispatcher("links.jsp").include(request, response);
+		// request.getRequestDispatcher("links.jsp").include(request, response);
 
 		HttpSession session = request.getSession(false);
 
-		if (session.getAttribute("username") != null) {
+		// if (session.getAttribute("username") != null) {
 
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-			String queryS = request.getParameter("searchVal");
-			StringBuffer utilOutput = new StringBuffer();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		String queryS = request.getParameter("searchVal");
+		StringBuffer utilOutput = new StringBuffer();
 
-			SearchQueryStub stub = new SearchQueryStub();
+		SearchQueryStub stub = new SearchQueryStub();
 
-			SearchQueryStub.DoSearch params = new SearchQueryStub.DoSearch();
+		SearchQueryStub.DoSearch params = new SearchQueryStub.DoSearch();
 
-			params.setQueryS(queryS);
+		params.setQueryS(queryS);
 
-			SearchQueryStub.DoSearchResponse resp = null;
-			try {
-				resp = stub.doSearch(params);
-			} catch (SearchQuerySQLExceptionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SearchQueryIOExceptionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		SearchQueryStub.DoSearchResponse resp = null;
+		try {
+			resp = stub.doSearch(params);
+		} catch (SearchQuerySQLExceptionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SearchQueryIOExceptionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-			Students[] students = resp.get_return();
+		Students[] students = resp.get_return();
 
-			if (students == null) {
+		if (students == null) {
 
-				/*
-				 * System.out.println("This is null");
-				 * 
-				 * utilOutput.
-				 * append("\n <p class='text-danger'>Student is not present in database.</p>");
-				 * request.setAttribute("utilOutput", utilOutput.toString());
-				 */
-
-			} else {
-				System.out.println("This is not null");
-
-				utilOutput.append("\n <p class='text-success'>Students present in database.</p>");
-				request.setAttribute("utilOutput", utilOutput.toString());
-			}
-
-			request.setAttribute("students", students);
-			String url = "/searchRead.jsp";
-
-			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-			dispatcher.forward(request, response);
+			/*
+			 * System.out.println("This is null");
+			 * 
+			 * utilOutput.
+			 * append("\n <p class='text-danger'>Student is not present in database.</p>");
+			 * request.setAttribute("utilOutput", utilOutput.toString());
+			 */
 
 		} else {
+			System.out.println("This is not null");
 
-			out.print("<p class='text-decoration-none text-danger'>You are not logged in, log in first.</p>");
-			out.print("<a href='login.jsp' class='btn btn-primary btn-sm'>Login");
-			out.print("</a>");
-			out.print("</div></div></div><jsp:include page='footer.jsp'/></html>");
+			utilOutput.append("\n <p class='text-success'>Students present in database.</p>");
+			request.setAttribute("utilOutput", utilOutput.toString());
 		}
+
+		request.setAttribute("students", students);
+		String url = "/searchRead.jsp";
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response);
+
+		/*
+		 * } else {
+		 * 
+		 * out.
+		 * print("<p class='text-decoration-none text-danger'>You are not logged in, log in first.</p>"
+		 * ); out.print("<a href='login.jsp' class='btn btn-primary btn-sm'>Login");
+		 * out.print("</a>");
+		 * out.print("</div></div></div><jsp:include page='footer.jsp'/></html>"); }
+		 */
 		out.close();
 
 	}
