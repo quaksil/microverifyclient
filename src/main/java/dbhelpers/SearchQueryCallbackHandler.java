@@ -45,22 +45,6 @@
 
         
            /**
-            * auto generated Axis2 call back method for isNumeric method
-            * override this method for handling normal response from isNumeric operation
-            */
-           public void receiveResultisNumeric(
-                    dbhelpers.SearchQueryStub.IsNumericResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from isNumeric operation
-           */
-            public void receiveErrorisNumeric(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for getPhoto method
             * override this method for handling normal response from getPhoto operation
             */
