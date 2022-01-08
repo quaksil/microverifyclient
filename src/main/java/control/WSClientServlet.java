@@ -34,7 +34,7 @@ public class WSClientServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		request.getRequestDispatcher("links.jsp").include(request, response);
+		// request.getRequestDispatcher("links.jsp").include(request, response);
 
 		HttpSession session = request.getSession(false);
 
