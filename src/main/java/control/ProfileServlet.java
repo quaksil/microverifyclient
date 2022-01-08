@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,7 @@ public class ProfileServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		request.getRequestDispatcher("links.jsp").include(request, response);
+		// request.getRequestDispatcher("links.jsp").include(request, response);
 
 		HttpSession session = request.getSession(false);
 
@@ -56,6 +57,11 @@ public class ProfileServlet extends HttpServlet {
 			out.print("</div></div></div><jsp:include page='footer.jsp'/></html>");
 		}
 		out.close();
+		
+		String url = "/links.jsp";
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response);
 
 	}
 
