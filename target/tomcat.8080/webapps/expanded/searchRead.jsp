@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page
-	import="dbhelpers.SearchQueryStub.Students,java.util.ArrayList,java.text.SimpleDateFormat;"%>
+	import="dbhelpers.SearchQueryStub.Students,java.util.ArrayList,java.text.SimpleDateFormat"%>
 <html>
 <jsp:include page="header.jsp" />
 <p>

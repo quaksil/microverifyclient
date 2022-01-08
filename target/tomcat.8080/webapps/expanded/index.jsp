@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ page import="javax.servlet.http.HttpSession;"%>
+<%@ page import="javax.servlet.http.HttpSession"%>
 <html>
 <jsp:include page="header.jsp" />
 <p>
