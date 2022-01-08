@@ -93,15 +93,15 @@
 				if (isAuthorizedYear == 2021) {
 			%>
 
-			<td class="text-decoration-none text-success"><%=isAuthorizedYear%></td>
-			<td class="text-decoration-none text-success"><b>Authorized</b></td>
+			<td class="text-decoration-none text-success fw-bold"><%=isAuthorizedYear%></td>
+			<td class="text-decoration-none text-success fw-normal fst-italic">Authorized</td>
 
 			<%
 				} else {
 			%>
-			<td class="text-decoration-none text-danger"><%=isAuthorizedYear%>
+			<td class="text-decoration-none text-danger fw-bold"><%=isAuthorizedYear%>
 			</td>
-			<td class="text-decoration-none text-danger"><b>Unauthorized</b></td>
+			<td class="text-decoration-none text-danger fw-normal fst-italic">Unauthorized</td>
 			<%
 				}
 			%>
