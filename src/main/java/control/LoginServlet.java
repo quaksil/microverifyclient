@@ -36,10 +36,12 @@ public class LoginServlet extends HttpServlet {
 
 		AgentProfile ap = new AgentProfile();
 		Agent agent = ap.verify(username, password);
+		
+		HttpSession session = null;
 
 		if (agent != null) {
 
-			HttpSession session = request.getSession(true);
+			session = request.getSession();
 
 			int agent_id = agent.getId();
 			String firstname = agent.getFirstname();
