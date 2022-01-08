@@ -29,18 +29,17 @@ public class LoginServlet extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		
-		request.getRequestDispatcher("links.jsp").include(request, response);
 
+		request.getRequestDispatcher("links.jsp").include(request, response);
+		HttpSession session = null;
+		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
 		AgentProfile ap = new AgentProfile();
 		Agent agent = ap.verify(username, password);
-		
-		HttpSession session = null;
 
-		if (agent != null) {
+		// if (agent != null) {
 
 			session = request.getSession();
 
@@ -57,12 +56,12 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("firstname", firstname);
 			session.setAttribute("lastname", lastname);
 			session.setAttribute("agent_id", agent_id);
-		} else {
+		/*} else {
 			out.print("<p class='text-danger text-decoration-none'>Could not log you in.</p>");
 			out.print("<a href='login.jsp' class='btn btn-primary btn-sm'>Try Again");
 			out.print("</a>");
 			out.print("</div></div></div><jsp:include page='footer.jsp'/></html>");
-		}
+		}*/
 		out.close();
 
 	}

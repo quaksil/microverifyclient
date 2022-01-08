@@ -25,9 +25,10 @@ public class ProfileServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		// request.getRequestDispatcher("links.jsp").include(request, response);
-
 		HttpSession session = request.getSession(false);
+		request.getRequestDispatcher("links.jsp").include(request, response);
+
+		
 
 		if (session.getAttribute("username") != null) {
 
@@ -57,11 +58,6 @@ public class ProfileServlet extends HttpServlet {
 			out.print("</div></div></div><jsp:include page='footer.jsp'/></html>");
 		}
 		out.close();
-		
-		String url = "/links.jsp";
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
 
 	}
 
