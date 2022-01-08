@@ -3,6 +3,7 @@ package control;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,37 +32,44 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		request.getRequestDispatcher("links.jsp").include(request, response);
-		HttpSession session = null;
-		
+
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
 		AgentProfile ap = new AgentProfile();
 		Agent agent = ap.verify(username, password);
 
-		// if (agent != null) {
+		if (agent != null) {
 
-			session = request.getSession();
+			HttpSession session = request.getSession();
 
 			int agent_id = agent.getId();
 			String firstname = agent.getFirstname();
 			String lastname = agent.getLastname();
 
-			out.print("<p> Welcome, " + firstname + " " + lastname + ".</p>");
-			out.print("<a href='index.jsp' class='btn btn-primary btn-sm'>My Portal");
-			out.print("</a>");
-			out.print("</div></div></div><jsp:include page='footer.jsp'/></html>");
+			/*
+			 * out.print("<p> Welcome, " + firstname + " " + lastname + ".</p>");
+			 * out.print("<a href='index.jsp' class='btn btn-primary btn-sm'>My Portal");
+			 * out.print("</a>");
+			 * out.print("</div></div></div><jsp:include page='footer.jsp'/></html>");
+			 */
 
 			session.setAttribute("username", username);
 			session.setAttribute("firstname", firstname);
 			session.setAttribute("lastname", lastname);
 			session.setAttribute("agent_id", agent_id);
-		/*} else {
+
+			String url = "/index.jsp";
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+			dispatcher.forward(request, response);
+
+		} else {
 			out.print("<p class='text-danger text-decoration-none'>Could not log you in.</p>");
 			out.print("<a href='login.jsp' class='btn btn-primary btn-sm'>Try Again");
 			out.print("</a>");
 			out.print("</div></div></div><jsp:include page='footer.jsp'/></html>");
-		}*/
+		}
 		out.close();
 
 	}
