@@ -10,7 +10,7 @@ package dbhelpers;
 
 public class SearchQueryIOExceptionException extends java.lang.Exception{
 
-    private static final long serialVersionUID = 1640417462569L;
+    private static final long serialVersionUID = 1641608355801L;
     
     private dbhelpers.SearchQueryStub.SearchQueryIOException faultMessage;
 

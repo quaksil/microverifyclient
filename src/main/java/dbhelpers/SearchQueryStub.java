@@ -1,3 +1,4 @@
+
 /**
  * SearchQueryStub.java
  *
@@ -145,7 +146,7 @@
      */
     public SearchQueryStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost:8080/microverify/services/SearchQuery.SearchQueryHttpSoap12Endpoint/" );
+                    this(configurationContext,"http://microverify.herokuapp.com/services/SearchQuery.SearchQueryHttpSoap12Endpoint/" );
                 
     }
 
@@ -154,7 +155,7 @@
      */
     public SearchQueryStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost:8080/microverify/services/SearchQuery.SearchQueryHttpSoap12Endpoint/" );
+                    this("http://microverify.herokuapp.com/services/SearchQuery.SearchQueryHttpSoap12Endpoint/" );
                 
     }
 
@@ -1050,14 +1051,14 @@
         }
         return false;
     }
-     //http://localhost:8080/microverify/services/SearchQuery.SearchQueryHttpSoap12Endpoint/
+     //http://microverify.herokuapp.com/services/SearchQuery.SearchQueryHttpSoap12Endpoint/
         public static class DoSearch
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://dbHelpers",
                 "doSearch",
-                "ns1");
+                "ns4");
 
             
 
@@ -1187,7 +1188,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://dbHelpers")){
-                return "ns1";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -1596,7 +1597,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://dbHelpers",
                 "SearchQuerySQLException",
-                "ns1");
+                "ns4");
 
             
 
@@ -1720,7 +1721,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://dbHelpers")){
-                return "ns1";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2033,7 +2034,7 @@
         /* This type was generated from the piece of schema that had
                 name = Students_gender
                 Namespace URI = http://model/xsd
-                Namespace Prefix = ns2
+                Namespace Prefix = ns1
                 */
             
 
@@ -2103,7 +2104,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://model/xsd")){
-                return "ns2";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2385,7 +2386,7 @@
         /* This type was generated from the piece of schema that had
                 name = SQLException
                 Namespace URI = http://sql.java/xsd
-                Namespace Prefix = ns3
+                Namespace Prefix = ns2
                 */
             
 
@@ -2627,7 +2628,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://sql.java/xsd")){
-                return "ns3";
+                return "ns2";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -3006,7 +3007,7 @@
         /* This type was generated from the piece of schema that had
                 name = Students
                 Namespace URI = http://model/xsd
-                Namespace Prefix = ns2
+                Namespace Prefix = ns1
                 */
             
 
@@ -3888,7 +3889,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://model/xsd")){
-                return "ns2";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -4630,7 +4631,7 @@
         /* This type was generated from the piece of schema that had
                 name = IOException
                 Namespace URI = http://io.java/xsd
-                Namespace Prefix = ns4
+                Namespace Prefix = ns3
                 */
             
 
@@ -4700,7 +4701,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://io.java/xsd")){
-                return "ns4";
+                return "ns3";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -4982,7 +4983,7 @@
         /* This type was generated from the piece of schema that had
                 name = Department
                 Namespace URI = http://model/xsd
-                Namespace Prefix = ns2
+                Namespace Prefix = ns1
                 */
             
 
@@ -5172,7 +5173,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://model/xsd")){
-                return "ns2";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -5522,7 +5523,7 @@
         /* This type was generated from the piece of schema that had
                 name = Major
                 Namespace URI = http://model/xsd
-                Namespace Prefix = ns2
+                Namespace Prefix = ns1
                 */
             
 
@@ -5712,7 +5713,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://model/xsd")){
-                return "ns2";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -6063,7 +6064,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://dbHelpers",
                 "doSearchResponse",
-                "ns1");
+                "ns4");
 
             
 
@@ -6239,7 +6240,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://dbHelpers")){
-                return "ns1";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -6607,7 +6608,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://dbHelpers",
                 "SearchQueryIOException",
-                "ns1");
+                "ns4");
 
             
 
@@ -6731,7 +6732,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://dbHelpers")){
-                return "ns1";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -7044,7 +7045,7 @@
         /* This type was generated from the piece of schema that had
                 name = Photo
                 Namespace URI = http://model/xsd
-                Namespace Prefix = ns2
+                Namespace Prefix = ns1
                 */
             
 
@@ -7350,7 +7351,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://model/xsd")){
-                return "ns2";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -7765,7 +7766,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://dbHelpers",
                 "isNumeric",
-                "ns1");
+                "ns4");
 
             
 
@@ -7895,7 +7896,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://dbHelpers")){
-                return "ns1";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -8212,7 +8213,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://dbHelpers",
                 "isNumericResponse",
-                "ns1");
+                "ns4");
 
             
 
@@ -8340,7 +8341,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://dbHelpers")){
-                return "ns1";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -8653,7 +8654,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://dbHelpers",
                 "getPhoto",
-                "ns1");
+                "ns4");
 
             
 
@@ -8781,7 +8782,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://dbHelpers")){
-                return "ns1";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -9095,7 +9096,7 @@
         /* This type was generated from the piece of schema that had
                 name = Faculty
                 Namespace URI = http://model/xsd
-                Namespace Prefix = ns2
+                Namespace Prefix = ns1
                 */
             
 
@@ -9285,7 +9286,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://model/xsd")){
-                return "ns2";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -9636,7 +9637,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://dbHelpers",
                 "getPhotoResponse",
-                "ns1");
+                "ns4");
 
             
 
@@ -9760,7 +9761,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://dbHelpers")){
-                return "ns1";
+                return "ns4";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
