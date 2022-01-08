@@ -39,6 +39,8 @@ public class LoginServlet extends HttpServlet {
 
 		if (agent != null) {
 
+			HttpSession session = request.getSession(true);
+
 			int agent_id = agent.getId();
 			String firstname = agent.getFirstname();
 			String lastname = agent.getLastname();
@@ -47,7 +49,6 @@ public class LoginServlet extends HttpServlet {
 			out.print("<a href='index.jsp' class='btn btn-primary btn-sm'>My Portal");
 			out.print("</a>");
 			out.print("</div></div></div><jsp:include page='footer.jsp'/></html>");
-			HttpSession session = request.getSession();
 
 			session.setAttribute("username", username);
 			session.setAttribute("firstname", firstname);
