@@ -68,17 +68,8 @@
 			<th>#</th>
 			<th>Firstname</th>
 			<th>Lastname</th>
-			<!--  <th>Gender</th>
-			<th>Birthday</th>
-			<th>Father Firstname</th>
-			<th>Mother Firstname</th>
-			<th>Mother Lastname</th>
-			<th>Faculty</th>
-			<th>Department</th>
-			<!--  <th>Course</th>
-			<th>Level</th>
-			<th>Major</th> -->
 			<th>Registration</th>
+			<th>Status</th>
 			<th class='text-center'>Action</th>
 	</thead>
 	<tbody>
@@ -94,37 +85,23 @@
 
 			<td><%=students[i].getLastname()%></td>
 
-			<!--<td><%=students[i].getGender()%></td>
-
-			 <td><%=students[i].getBday()%></td>
-
-			<td><%=students[i].getFirstfather()%></td>
-
-			<td><%=students[i].getFirstmaiden()%></td>
-			<td><%=students[i].getLastmaiden()%></td> 
-
-			 <td><%=students[i].getFaculty().getName()%></td>
-			<td><%=students[i].getDepartment().getName()%></td>
-
-			<td><%=students[i].getCourse()%></td>
-
-			<td><%=students[i].getLevel()%></td> 
-
-			<td><%=students[i].getMajor().getName()%></td>-->
-
 			<%
 				int isAuthorizedYear = students[i].getLastyear();
 			%>
+
 			<%
 				if (isAuthorizedYear == 2021) {
 			%>
 
-			<td class="text-decoration-none text-success"><b>[Authorized]</b> - <%=isAuthorizedYear%></td>
+			<td class="text-decoration-none text-success"><%=isAuthorizedYear%></td>
+			<td class="text-decoration-none text-success"><b>Authorized</b></td>
+
 			<%
 				} else {
 			%>
-			<td class="text-decoration-none text-danger"><b>[Unauthorized]</b> - <%=isAuthorizedYear%>
+			<td class="text-decoration-none text-danger"><%=isAuthorizedYear%>
 			</td>
+			<td class="text-decoration-none text-danger"><b>Unauthorized</b></td>
 			<%
 				}
 			%>
